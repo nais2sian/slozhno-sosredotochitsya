@@ -1,5 +1,566 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+:root {
+  --bg-color: #000028; 
+  --text-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --focus-color: #DB00FF;
+  --main-font: 'IBM Plex Mono', Arial, sans-serif;
+  --font-size: 18px;
+  --image: url('../images/cover-image-dark.png');
+}
+
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: auto;
+  padding: 10px; 
+  overflow-x: hidden;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  background-image: var(--image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  inline-size: 375px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-block-end: 50px;
+  min-block-size: 648px;
+}
+
+.decorated-zone {
+  position: relative;
+  color: var(--accent-color);
+}
+
+.decorated-zone::after {
+  content:'';
+  position: absolute;
+  right: 0;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  background-image: url('../images/ellipse.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inline-size: 25.038px;
+  block-size: 25px;
+}
+
+div {
+  content:'REC';
+  position: absolute;
+  right: 28px;
+  font-size: var(--font-size);
+}
+
+.header__theme-menu {
+  display: grid;
+  justify-content: end;
+  align-content: end;
+  margin-block-end: 55px;
+  font-size: var(--font-size);
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 11px; 
+}
+
+.header__theme-menu-button {
+  border: none;
+  border: 1px solid transparent;
+  padding: 0 11px 0 12px;
+  padding-bottom: 2px;
+  color: var(--accent-color);
+  font: inherit;
+  line-height: 18px;
+  background-color: transparent;
+  cursor: pointer;
+  block-size: 24px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.5);
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__title {
+  margin-block-start: 13px;
+  color: var(--focus-color);
+  font-family: inherit;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7rem);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__content {
+  display: grid;
+  align-items: start;
+  margin-block-start: 43px;
+}
+
+.header__content::after {
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color); 
+  inline-size: 25.038px;
+  block-size: 24.999px;
+}
+
+.title-decor {
+  display: grid;
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  background-color: var(--accent-color);
+  inline-size: 100%;
+}
+
+
+
+  /* MAIN - ОСНОВНОЙ КОНТЕНТ */
+
+
+
+.content {
+  font-size: var(--font-size);
+  line-height: 23.4px;
+}
+
+.cards__block_vertical {
+  display: grid;
+}
+
+.cards__block_vertical .content__card:last-child {
+  margin-block-end: 50px; 
+}
+
+.cards__block_horizontal {
+  display: grid;
+  grid-template-columns:repeat(auto-fill, minmax(315px, 1fr)); 
+}
+
+.cards__block_horizontal .content__card:last-child {
+  margin-block-end: 50px; 
+}
+
+.cards__title {
+  margin-block-end: 20px;
+  color: var(--accent-color);
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: var(--font-size);
+}
+
+.accent {
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #FF0070;
+}
+
+.accent:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.accent:focus {
+  outline: none;
+}
+
+.accent:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.title-decor.card {
+  margin-block-end: 10px;
+  background-color: var(--accent-color);
+  inline-size: 100%;
+}
+
+.title-decor.advice {
+  margin-block-end: 10px;
+  font-weight: 400;
+  background-color: var(--accent-color);
+  inline-size: 100%;
+}
+
+.content__card-list :first-child.title-decor.card {
+  margin-block-end: 20px;
+}
+  
+.content__card:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+.card__text:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+
+
+  /* GALERY - КАРТИНКИ */
+
+
+
+.title-decor.galery {
+  margin-block-end: 10px;
+}
+
+.galery__picture {
+  display: grid;
+  gap: 10px;
+}
+
+.picture {
+  background-position: center;
+  background-size: cover;
+  inline-size: 354.999px;
+}
+
+
+
+/* FOOTER - ПОДВАЛ */
+
+
+
+.footer__block {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 50px;
+  min-block-size: 647px;
+}
+
+.footer__block::before {
+  content:'';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  inline-size: 25.038px;
+  block-size: 25px;
+}
+
+.footer__block::after {
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color); 
+  inline-size: 25.038px;
+  block-size: 24.999px;
+}
+
+.footer__title {
+  color: var(--focus-color);
+  font-family: inherit;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7rem);
+  line-height: 82.5%;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+
+
+  /* МЕДИАВЫРАЖЕНИЯ ДЛЯ АДАПТИВА */
+
+  
+
+@media (768px <= width < 1024px) {
+  .page {
+    padding: 20px;
+    inline-size: 768px;
+  }
+
+  .header {
+   margin-block-end: 80px;
+   min-block-size: 984px;
+  }
+
+  .header__title {
+    display: grid;
+    margin-inline-start: -19px;
+    margin-block-start: 115px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__content {
+    display: grid;
+    justify-items: end;
+    align-items: start;
+    margin-block-start: 48px;
+  }
+
+  .title-decor {
+    inline-size: 50%;
+  }
+
+  .header__theme-menu-list {
+    display: grid;
+    gap: 12px; 
+    margin-block-end: 6px;
+  }
+
+
+
+/* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
+
+
+
+  .cards__block_vertical {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 19px; 
+  }
+
+  .cards__block_vertical .content__card:last-child {
+    margin-block-end: 60px; 
+  }
+
+  .cards__block_horizontal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .cards__block_horizontal .content__card:last-child {
+    margin-block-end: 60px; 
+  }
+
+  .cards__title {
+    max-inline-size: 230px;
+  }
+
+  .content__card:not(:last-child) {
+    margin-block-end: 0;
+  }
+
+  .card__text {
+    margin-block-end: 20px;
+  }
+
+
+
+  /* GALERY - КАРТИНКИ ДЛЯ АДАПТИВА*/
+
+
+
+  .title-decor.galery {
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+    inline-size: 100%;
+  }
+
+  .galery__picture {
+    display: grid;
+    gap: 20px;
+  }
+
+  .picture {
+    margin: 0;
+    object-fit: cover;
+    inline-size: 100%;
+  }
+
+  .picture:not(:last-child) {
+    margin-block-end: 0;
+  }
+
+  .picture:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    min-block-size: 192px;
+  }
+
+  .picture:nth-of-type(2) {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    min-block-size: 441px;
+  }
+
+  .picture:nth-of-type(3) {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    min-block-size: 568px;
+  }
+
+  .picture:nth-of-type(4) {
+    min-block-size: 230px;
+  }
+
+  .picture:nth-of-type(5) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    height: 100%;
+  }
+
+  .footer__block {
+    margin-block-start: 80px;
+    min-block-size: 984px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+
+
+/* МЕДИАВЫРАЖЕНИЯ ДЛЯ АДАПТИВА */
+
+
+
+@media (min-width: 1024px) {
+
+  .page {
+    padding: 20px;
+    inline-size: 1024px;
+  }
+
+  .header {
+    margin-block-end: 80px;
+    min-block-size: 730px;
+  }
+
+  .header__theme-menu {
+    display: flex;
+    margin-inline-end: 379px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    gap: 12px;
+  }
+
+  .header__title {
+    display: grid;
+    margin-left: -20px;
+    margin-block-start: 57px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__content {
+    display: grid;
+    justify-items: end;
+    align-items: start;
+    margin-block-start: 57px;
+  }
+
+  .title-decor {
+    inline-size: 50%;
+  }
+
+
+
+/* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
+
+
+
+  .cards__block_vertical {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 12px;
+  }
+
+  .cards__block_vertical .content__card:last-child {
+    margin-block-end: 80px; 
+  }
+
+  .cards__block_horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .cards__block_horizontal .content__card:last-child {
+    margin-block-end: 80px; 
+  }
+
+  .cards__title {
+    max-inline-size: 309px;
+  }
+
+
+
+  /* GALERY - КАРТИНКИ ДЛЯ АДАПТИВА*/
+
+
+
+  .title-decor.galery {
+    margin-block-end: 20px;
+    inline-size: 100%;
+  }
+
+  .galery__picture {
+    display: grid;
+    gap: 20px;
+  }
+
+  .picture {
+    margin: 0;
+    object-fit: cover;
+    inline-size: 100%;
+  }
+
+  .picture:not(:last-child) {
+    margin-block-end: 0;
+  }
+
+  .picture:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    min-block-size: 260px;
+  }
+
+  .picture:nth-of-type(2) {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    min-block-size: 595px;
+  }
+
+  .picture:nth-of-type(3) {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    min-block-size: 768px;
+  }
+
+  .picture:nth-of-type(4) {
+    min-block-size: 315px;
+  }
+
+  .picture:nth-of-type(5) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    min-block-size: 428px; 
+  }
+
+  .footer__block {
+    margin-block-start: 80px;
+    min-block-size: 728px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }

@@ -4,9 +4,165 @@
   переключая тему
 */
 
-.page.theme_light {
+.page .theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  .page {
+    width: 375px;
+    margin: auto;
+    padding: 10px;
+    color: var(--text-color);
+    font-family: var(--main-font);
+    background-color: var(--bg-color);
+    background-image: var(--image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+  }
+}
+
+ :root .theme_light {
+  --bg-color: #FFF1F7;
+  --text-color: #353430;
+  --accent-color: #FF8DCB;
+  --focus-color: #FFC2E6;
+  --main-font: 'IBM Plex Mono', Arial, sans-serif;
+  --font-size:  1.125rem;
+  --image: url('../images/cover-image-light.png');
+}
+
+.theme_light {
+  @media (min-width: 1024px) {
+    .header__title {
+      text-shadow: 4px 4px 0 #FF0070;
+    }
+
+    .footer__title {
+      text-shadow: 2px 2px 0 #FF0070;;
+    }
+  }
+
+  .title-decor {
+    color: var(--text-color);
+  }
+
+  .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  .header__theme-menu-button_active {
+    outline: 1px solid var(--text-color);
+  }
+
+  .header__theme-menu-button:hover {
+    border: 1px solid rgba(53, 52, 48, 0.5);
+  }
+
+  .header__theme-menu-button:focus {
+    border-block-end: 1px solid var(--text-color);
+  }
+
+  .decorated-zone::after {
+    border-inline-end: 1px solid var(--text-color);
+    border-block-start: 1px solid var(--text-color);
+    background-image: none;
+  }
+
+  div {
+    display: none;
+  }
+
+  .header__content::after {
+    border-inline-start: 1px solid var(--text-color);
+    border-block-end: 1px solid var(--text-color);
+  }
+
+  .cards__title {
+    color: var(--text-color);
+  }
+  
+  .accent {
+    text-shadow: 1px 1px 0px var(--accent-color);
+  }
+
+  .footer__block::before {
+    border-inline-end: 1px solid var(--text-color);
+    border-block-start: 1px solid var(--text-color);
+  }
+  
+  .footer__block::after {
+    border-inline-start: 1px solid var(--text-color);
+    border-block-end: 1px solid var(--text-color);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  
+    @media (min-width: 1024px) {
+      .header__title,.footer__title {
+      text-shadow: 4px 4px 0 #FF0070;
+      }
+    }
+  :root {
+    --bg-color: #FFF1F7;
+    --text-color: #353430;
+    --accent-color: #FF8DCB;
+    --focus-color: #FFC2E6;
+    --main-font: 'IBM Plex Mono', Arial, sans-serif;
+    --font-size:  1.125rem; 
+    --image: url('../images/cover-image-light.png');
+    }
+
+  .title-decor {
+     color: var(--text-color);
+    }
+
+    .header__theme-menu-button {
+      color: var(--text-color);
+    }
+
+    .header__theme-menu-button_active {
+      outline: 1px solid var(--text-color);
+    }
+
+    .header__theme-menu-button:hover {
+      border: 1px solid var(--text-color);
+    }
+  
+    .decorated-zone::after {
+      border-inline-end: 1px solid var(--text-color);
+      border-block-start: 1px solid var(--text-color);
+      background-image: none;
+    }
+  
+    div {
+      display: none;
+    }
+  
+    .header__content::after {
+      border-inline-start: 1px solid var(--text-color);
+      border-block-end: 1px solid var(--text-color);
+    }
+  
+    .cards__title {
+      color: var(--text-color);
+    }
+
+    .accent {
+      text-shadow: 1px 1px 0px var(--accent-color);
+    }
+  
+    .footer__block::before {
+      border-inline-end: 1px solid var(--text-color);
+      border-block-start: 1px solid var(--text-color);
+    }
+    
+    .footer__block::after {
+      border-inline-start: 1px solid var(--text-color);
+      border-block-end: 1px solid var(--text-color);
+    }
 }
