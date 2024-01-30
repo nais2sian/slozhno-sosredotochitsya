@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 :root {
-  --bg-color: #000028; 
+  --bg-color:#000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
   --focus-color: #DB00FF;
@@ -12,7 +12,7 @@
 
 .page {
   margin: auto;
-  padding: 10px; 
+  padding: 10px;
   overflow-x: hidden;
   color: var(--text-color);
   font-family: var(--main-font);
@@ -22,6 +22,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  object-fit: cover;
   inline-size: 375px;
 }
 
@@ -69,7 +70,7 @@ div {
 
 .header__theme-menu-list {
   display: grid;
-  gap: 11px; 
+  gap: 11px;
 }
 
 .header__theme-menu-button {
@@ -120,7 +121,7 @@ div {
   bottom: 0;
   left: 0;
   border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color); 
+  border-left: 1px solid var(--accent-color);
   inline-size: 25.038px;
   block-size: 24.999px;
 }
@@ -151,16 +152,16 @@ div {
 }
 
 .cards__block_vertical .content__card:last-child {
-  margin-block-end: 50px; 
+  margin-block-end: 50px;
 }
 
 .cards__block_horizontal {
   display: grid;
-  grid-template-columns:repeat(auto-fill, minmax(315px, 1fr)); 
+  grid-template-columns:repeat(auto-fill, minmax(315px, 1fr));
 }
 
 .cards__block_horizontal .content__card:last-child {
-  margin-block-end: 50px; 
+  margin-block-end: 50px;
 }
 
 .cards__title {
@@ -266,7 +267,7 @@ div {
   bottom: 0;
   left: 0;
   border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color); 
+  border-block-end: 1px solid var(--accent-color);
   inline-size: 25.038px;
   block-size: 24.999px;
 }
@@ -316,7 +317,7 @@ div {
 
   .header__theme-menu-list {
     display: grid;
-    gap: 12px; 
+    gap: 12px;
     margin-block-end: 6px;
   }
 
@@ -328,12 +329,12 @@ div {
 
   .cards__block_vertical {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
-    gap: 19px; 
+    grid-template-columns: 1fr 2fr;
+    gap: 19px;
   }
 
   .cards__block_vertical .content__card:last-child {
-    margin-block-end: 60px; 
+    margin-block-end: 60px;
   }
 
   .cards__block_horizontal {
@@ -343,7 +344,7 @@ div {
   }
 
   .cards__block_horizontal .content__card:last-child {
-    margin-block-end: 60px; 
+    margin-block-end: 60px;
   }
 
   .cards__title {
@@ -416,7 +417,7 @@ div {
 
   .footer__block {
     margin-block-start: 80px;
-    min-block-size: 984px;
+    min-block-size: 985px;
   }
 
   .footer__title {
@@ -478,12 +479,12 @@ div {
 
   .cards__block_vertical {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: 1fr 2fr;
     gap: 12px;
   }
 
   .cards__block_vertical .content__card:last-child {
-    margin-block-end: 80px; 
+    margin-block-end: 80px;
   }
 
   .cards__block_horizontal {
@@ -493,7 +494,7 @@ div {
   }
 
   .cards__block_horizontal .content__card:last-child {
-    margin-block-end: 80px; 
+    margin-block-end: 80px;
   }
 
   .cards__title {
@@ -552,7 +553,7 @@ div {
   .picture:nth-of-type(5) {
     grid-column-start: 2;
     grid-column-end: 4;
-    min-block-size: 428px; 
+    min-block-size: 428px;
   }
 
   .footer__block {
