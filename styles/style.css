@@ -1,7 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-body {
-  margin: 0;
-}
 
 :root {
   --bg-color:#000028;
@@ -33,9 +30,10 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  block-size: calc(100vh - 10px);
+  block-size: 100vh;
   padding-bottom: 10px;
   margin-bottom: 40px;
+  min-height: 658px;
 }
 
 .decorated-zone {
@@ -249,15 +247,16 @@ div {
   display: grid;
   justify-content: center;
   align-items: center;
-  margin-block-start: 50px;
+  margin-block-start: 40px;
+  padding-block-start: 10px;
   padding-block-end: 10px;
-  block-size: calc(100vh - 20px);
+  block-size: 100vh;
 }
 
 .footer__block::before {
   content:'';
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
@@ -298,17 +297,17 @@ div {
   }
 
   .header {
-   margin-block-end: 80px;
+   margin-block-end: 60px;
    padding-bottom: 20px;
-   min-block-size: 984px;
-   block-size: calc(100vh - 40px);
+   block-size: 100vh;
+   min-height: 1004px;
   }
 
   .header__title {
     display: grid;
     margin-inline-start: -20px;
     align-content: center;
-    padding-block-start: 18px;
+    padding-block-start: 3px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -316,11 +315,11 @@ div {
     display: grid;
     justify-items: end;
     align-items: start;
-    padding-block-start: 59px;
+    margin-top: 5px;
   }
 
   .decorated-zone::before {
-    bottom: 0;
+    bottom: 20px;
   }
 
   .title-decor {
@@ -328,7 +327,7 @@ div {
   }
 
   .header__theme-menu {
-    margin-block-end: 54px;
+    margin-block-end: 60px;
   }
 
   .header__theme-menu-list {
@@ -431,14 +430,19 @@ div {
   }
 
   .footer__block {
-    margin-block-start: 80px;
-    min-block-size: 1004px;
-    block-size: calc(100vh - 40px);
+    margin-block-start: 60px;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+    min-height: 1004px;
+    block-size: 100vh;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    padding-bottom: 10px;
+    padding-top:  5px;
+  }
+  .footer__block::before {
+    top: 20px;
   }
 }
 
@@ -459,7 +463,7 @@ div {
     margin-block-end: 60px;
     padding-bottom: 20px;
     min-block-size: 748px;
-    block-size: calc(100vh - 40px);
+    block-size: 100vh;
   }
 
   .header__theme-menu {
@@ -491,9 +495,7 @@ div {
   }
 
   .decorated-zone::before {
-    content:'';
-    position: absolute;
-    bottom: 0;
+    bottom: 20px;
   }
 
 
@@ -582,12 +584,19 @@ div {
   }
 
   .footer__block {
-    margin-block-start: 80px;
-    block-size: calc(100vh - 40px);
-    min-block-size: 728px;
+    margin-block-start: 60px;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+    block-size: 100vh;
+    min-block-size: 748px;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding-top:  5px;
+  }
+
+  .footer__block::before {
+    top: 20px;
   }
 }
