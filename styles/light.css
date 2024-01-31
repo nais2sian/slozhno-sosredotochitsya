@@ -75,7 +75,7 @@
     display: none;
   }
 
-  .header__content::after {
+  .decorated-zone::before {
     border-inline-start: 1px solid var(--text-color);
     border-block-end: 1px solid var(--text-color);
   }
