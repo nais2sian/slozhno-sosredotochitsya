@@ -438,7 +438,7 @@ div {
   }
 
   .footer__block::after {
-    bottom: 20px;
+    bottom: 10px;
   }
 }
 
@@ -458,7 +458,8 @@ div {
   .header {
     margin-block-end: 60px;
     padding-bottom: 20px;
-    block-size: calc(100vh - 40px);
+    min-block-size: 728px;
+    block-size: 100vh;
   }
 
   .header__theme-menu {
@@ -589,9 +590,5 @@ div {
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .footer__block::after {
-    bottom: 20px;
   }
 }
