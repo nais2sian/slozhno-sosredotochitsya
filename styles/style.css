@@ -243,7 +243,6 @@ div {
   display: grid;
   justify-content: center;
   align-items: center;
-  margin-block-start: 40px;
   block-size: 100vh;
 }
 
@@ -274,6 +273,7 @@ div {
   font-family: inherit;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7rem);
   line-height: 82.5%;
+  margin-top: 23px;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -294,7 +294,7 @@ div {
     block-size: 100vh;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    min-height: 1004px;
+    height: 1004px;
   }
 
   .header__title {
@@ -429,18 +429,17 @@ div {
   }
 
   .footer__block {
-    margin-block-start: 60px;
-    min-height: 1004px;
+    height: 1004px;
     block-size: 100vh;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-top: 22px;
+    margin-top: 42px;
   }
 
   .footer__block::before {
-    top: 20px;
+    top: 40px;
   }
 
   .footer__block::after {
