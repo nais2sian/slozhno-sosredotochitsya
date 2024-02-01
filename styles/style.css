@@ -13,6 +13,7 @@
 .page {
   margin: auto;
   padding: 10px;
+  object-fit: cover;
   overflow-x: hidden;
   color: var(--text-color);
   font-family: var(--main-font);
@@ -22,15 +23,14 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  object-fit: cover;
   inline-size: 375px;
 }
 
 .header {
   display: grid;
-  block-size: 100vh;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 228px 192px 228px;
+  block-size: 100vh;
 }
 
 .decorated-zone {
@@ -137,9 +137,9 @@ div {
 
 
 .content {
+  margin-top: 30px;
   font-size: var(--font-size);
   line-height: 23.4px;
-  margin-top: 30px;
 }
 
 .cards__block_vertical {
@@ -213,6 +213,8 @@ div {
 
   /* GALERY - КАРТИНКИ */
 
+
+
 .galery {
   margin-bottom: 30px;
 }
@@ -269,11 +271,11 @@ div {
 }
 
 .footer__title {
+  margin-block-start: 23px;
   color: var(--focus-color);
   font-family: inherit;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7rem);
   line-height: 82.5%;
-  margin-top: 23px;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -291,17 +293,17 @@ div {
 
   .header {
     display: grid;
-    block-size: 100vh;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
     height: 1004px;
+    block-size: 100vh;
   }
 
   .header__title {
     display: grid;
-    margin-inline-start: -20px;
     align-content: center;
     margin-bottom: 15px;
+    margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -309,7 +311,7 @@ div {
     display: grid;
     justify-items: end;
     align-items: start;
-    margin-top: 35px;
+    margin-block-start: 35px;
   }
 
   .decorated-zone::before {
@@ -321,8 +323,8 @@ div {
   }
 
   .header__theme-menu {
-    margin-block-end: 65px;
     align-content: end;
+    margin-block-end: 65px;
   }
 
   .header__theme-menu-list {
@@ -331,11 +333,13 @@ div {
   }
 
 
+
 /* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
 
 
+
   .content {
-    margin-top: 60px;
+    margin-block-start: 60px;
   }
 
   .cards__block_vertical {
@@ -374,8 +378,10 @@ div {
 
   /* GALERY - КАРТИНКИ ДЛЯ АДАПТИВА*/
 
+
+
   .galery {
-    margin-bottom: 40px;
+    margin-block-end: 40px;
   }
 
   .title-decor.galery {
@@ -434,8 +440,8 @@ div {
   }
 
   .footer__title {
+    margin-block-start: 42px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-top: 42px;
   }
 
   .footer__block::before {
@@ -453,6 +459,7 @@ div {
 
 
 
+
 @media (min-width: 1024px) {
 
   .page {
@@ -462,11 +469,11 @@ div {
 
   .header {
     display: grid;
-    block-size: 100vh;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    padding-bottom: 20px;
     min-height: 768px;
+    padding-bottom: 20px;
+    block-size: 100vh;
   }
 
   .header__theme-menu {
@@ -506,8 +513,9 @@ div {
 /* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
 
 
+
   .content {
-    margin-top: 40px;
+    margin-block-start: 40px;
   }
 
   .cards__block_vertical {
@@ -538,8 +546,10 @@ div {
 
   /* GALERY - КАРТИНКИ ДЛЯ АДАПТИВА*/
 
+
+
   .galery {
-    margin-bottom: 40px;
+    margin-block-end: 40px;
   }
 
   .title-decor.galery {
@@ -597,8 +607,8 @@ div {
   }
 
   .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-top: 40px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .footer__block::before {
