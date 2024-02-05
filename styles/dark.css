@@ -1,22 +1,9 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
-.page .theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
-}
-
- :root .theme_dark {
+:root .theme_dark {
   --bg-color:#000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
   --focus-color: #DB00FF;
-  --main-font: 'IBM Plex Mono', Arial, sans-serif;
+  --main-font: 'IBM Plex Mono', monospace;
   --font-size: 1.125rem;
   --image: url('../images/cover-image-dark.png');
 }
