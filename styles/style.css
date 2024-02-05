@@ -27,7 +27,7 @@
 .decorated-zone::after {
   content:'';
   position: absolute;
-  top: 10px; 
+  top: 10px;
   right: 10px;
   border-top: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
@@ -296,7 +296,7 @@
   }
 
   .decorated-zone::after {
-    top: 20px; 
+    top: 20px;
     right: 20px;
   }
   
@@ -475,7 +475,7 @@
   }
 
   .decorated-zone::after {
-    top: 20px; 
+    top: 20px;
     right: 20px;
   }
   
