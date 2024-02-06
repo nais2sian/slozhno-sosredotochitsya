@@ -6,7 +6,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  inline-size: 375px;
+  min-inline-size: 375px;
 }
 
 .header {
@@ -25,7 +25,7 @@
 }
 
 .decorated-zone::after {
-  content:'';
+  content: '';
   position: absolute;
   top: 10px;
   right: 10px;
@@ -36,7 +36,7 @@
 }
 
 .decorated-zone::before {
-  content:'';
+  content: '';
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -56,7 +56,7 @@
 }
 
 .decorated-element::after {
-  content:'';
+  content: '';
   position: absolute;
   top: 7px;
   left: 42px;
@@ -133,7 +133,7 @@
 
 
 
-  /* MAIN - ОСНОВНОЙ КОНТЕНТ */
+/* MAIN - ОСНОВНОЙ КОНТЕНТ */
 
 
 
@@ -155,7 +155,8 @@
 
 .cards__block_columns {
   display: grid;
-  grid-template-columns:repeat(auto-fill, minmax(315px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+  gap: 20px;
 }
 
 .cards__block_columns .content__card:last-child {
@@ -203,7 +204,7 @@
 .content__card-list :first-child.title-decor.card {
   margin-block-end: 20px;
 }
-  
+
 .content__card:not(:last-child) {
   margin-block-end: 20px;
 }
@@ -214,7 +215,7 @@
 
 
 
-  /* GALERY - КАРТИНКИ */
+/* GALERY - КАРТИНКИ */
 
 
 
@@ -234,9 +235,9 @@
 }
 
 .picture {
-  width: 100%;
+  inline-size: 100%;
+  min-block-size: 100%;
 }
-
 
 
 
@@ -265,14 +266,14 @@
 
 
 
-  /* МЕДИАВЫРАЖЕНИЯ ДЛЯ АДАПТИВА */
+/* МЕДИАВЫРАЖЕНИЯ ДЛЯ АДАПТИВА */
 
 
 
-@media (1024px > width >= 768px) {
+@media (1024px > width >=768px) {
 
   .page {
-    inline-size: 768px;
+    min-inline-size: 768px;
   }
 
   .header {
@@ -299,12 +300,12 @@
     top: 20px;
     right: 20px;
   }
-  
+
   .decorated-zone::before {
     bottom: 20px;
     left: 20px;
   }
-  
+
   .decorated-element {
     top: 21px;
     right: 38px;
@@ -317,7 +318,7 @@
 
 
 
-/* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
+  /* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
 
 
 
@@ -341,12 +342,17 @@
     grid-template-columns: 1fr;
   }
 
+  .cards__block_columns .content__card:first-of-type {
+    margin-block-start: 20px;
+  }
+
   .cards__block_columns .content__card:last-child {
     margin-block-end: 60px;
   }
 
   .cards__title {
     max-inline-size: 230px;
+    margin-block-end: 0;
   }
 
   .content__card:not(:last-child) {
@@ -380,7 +386,6 @@
   .picture {
     margin: 0;
     object-fit: cover;
-    inline-size: 100%;
   }
 
   .picture:not(:last-child) {
@@ -390,30 +395,22 @@
   .picture:first-of-type {
     grid-column-start: 1;
     grid-column-end: 3;
-    min-block-size: 192px;
   }
 
   .picture:nth-of-type(2) {
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-    min-block-size: 441px;
   }
 
   .picture:nth-of-type(3) {
     grid-row-start: 2;
     grid-row-end: 4;
-    min-block-size: 568px;
-  }
-
-  .picture:nth-of-type(4) {
-    min-block-size: 230px;
   }
 
   .picture:nth-of-type(5) {
     grid-column-start: 2;
     grid-column-end: 4;
-    height: 318px;
   }
 
   .footer__block {
@@ -433,10 +430,10 @@
 
 
 
-@media (width >= 1024px) {
+@media (width >=1024px) {
 
   .page {
-    inline-size: 1024px;
+    min-inline-size: 1024px;
   }
 
   .header {
@@ -478,12 +475,12 @@
     top: 20px;
     right: 20px;
   }
-  
+
   .decorated-zone::before {
     bottom: 20px;
     left: 20px;
   }
-  
+
   .decorated-element {
     top: 21px;
     right: 38px;
@@ -492,7 +489,7 @@
 
 
 
-/* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
+  /* MAIN - ОСНОВНОЙ КОНТЕНТ ДЛЯ АДАПТИВА */
 
 
 
@@ -510,7 +507,7 @@
   .cards__title {
     margin-block-end: 0px;
   }
-  
+
   .cards__block .content__card:last-child {
     margin-block-end: 80px;
   }
@@ -518,14 +515,17 @@
   .cards__block_columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
 
-  .cards__block_columns > .cards__title {
+  .cards__block_columns>.cards__title {
     grid-column: 1 / -1;
     max-width: 300px;
   }
- 
+
+  .cards__block_columns .content__card {
+    margin-block-end: 0;
+  }
+
   .cards__block_columns .content__card:last-child {
     margin-block-end: 80px;
   }
@@ -564,30 +564,22 @@
   .picture:first-of-type {
     grid-column-start: 1;
     grid-column-end: 3;
-    min-block-size: 260px;
   }
 
   .picture:nth-of-type(2) {
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-    min-block-size: 595px;
   }
 
   .picture:nth-of-type(3) {
     grid-row-start: 2;
     grid-row-end: 4;
-    min-block-size: 768px;
-  }
-
-  .picture:nth-of-type(4) {
-    min-block-size: 315px;
   }
 
   .picture:nth-of-type(5) {
     grid-column-start: 2;
     grid-column-end: 4;
-    min-block-size: 428px;
   }
 
   .footer__block {
