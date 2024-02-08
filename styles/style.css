@@ -330,6 +330,10 @@
     margin-block-end: 0;
   }
 
+  .cards__block.causes>.cards__title {
+    max-width: 230px;
+  }
+
   .content__card:not(:last-child) {
     margin-block-end: 0;
   }
