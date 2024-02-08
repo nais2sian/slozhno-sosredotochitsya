@@ -13,7 +13,6 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 1fr min-content 1fr;
-  align-items: center;
   min-height: 668px;
   padding: 10px 10px 0 10px;
   block-size: 100vh;
@@ -29,8 +28,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -40,19 +39,20 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
   inline-size: 25px;
   block-size: 25px;
 }
 
 .decorated-element {
   position: absolute;
-  top: 11px;
-  right: 29px;
-  display: flex;
+  top: 10px;
+  right: 30px;
+  display: var(--element-display);
   padding-right: 10px;
   font-size: var(--font-size);
+  text-transform: uppercase;
 }
 
 .decorated-element::after {
@@ -70,20 +70,21 @@
 .header__theme-menu {
   display: grid;
   justify-content: end;
-  margin-bottom: 6px;
+  align-items: center;
+  min-height: 100%;
   font-size: var(--font-size);
 }
 
 .header__theme-menu-list {
   display: grid;
-  gap: 11px;
+  gap: 12px;
 }
 
 .header__theme-menu-button {
   border: 1px solid transparent;
   padding: 0 11px 0 12px;
   padding-bottom: 2px;
-  color: var(--accent-color);
+  color: var(--button-color);
   font: inherit;
   line-height: 18px;
   text-transform: lowercase;
@@ -93,16 +94,16 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 40%);
+  border: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--button-color);
   outline: none;
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--button-color);
   pointer-events: none;
 }
 
@@ -118,12 +119,13 @@
 .header__content {
   display: grid;
   align-items: center;
-  margin-bottom: 12px;
+  height: 100%;
 }
 
 .title-decor {
   display: grid;
-  color: var(--bg-color);
+  margin-block-end: 10px;
+  color: var(--title-color);
   font-weight: 700;
   font-size: var(--font-size);
   line-height: 23.4px;
@@ -153,18 +155,18 @@
   margin-block-end: 50px;
 }
 
-.cards__block_columns {
+.cards__block.causes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
 }
 
-.cards__block_columns .content__card:last-child {
+.cards__block.causes .content__card:last-child {
   margin-block-end: 50px;
 }
 
 .cards__title {
   margin-block-end: 20px;
-  color: var(--accent-color);
+  color: var(--cards-title);
   font-family: var(--main-font);
   font-weight: 700;
   font-size: var(--font-size);
@@ -172,7 +174,7 @@
 
 .accent {
   text-decoration: none;
-  text-shadow: 1px 1px 0px #FF0070;
+  text-shadow: 1px 1px 0px var(--accent);
 }
 
 .accent:hover {
@@ -187,17 +189,8 @@
   outline: 1px solid var(--text-color);
 }
 
-.title-decor.card {
-  margin-block-end: 10px;
-  background-color: var(--accent-color);
-  inline-size: 100%;
-}
-
 .title-decor.advice {
-  margin-block-end: 10px;
   font-weight: 400;
-  background-color: var(--accent-color);
-  inline-size: 100%;
 }
 
 .content__card-list :first-child.title-decor.card {
@@ -205,10 +198,6 @@
 }
 
 .content__card:not(:last-child) {
-  margin-block-end: 20px;
-}
-
-.card__text:not(:last-child) {
   margin-block-end: 20px;
 }
 
@@ -224,10 +213,11 @@
 
 .title-decor.galery {
   margin-block-end: 10px;
+  inline-size: 100%;
 }
 
 .galery__picture {
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -236,6 +226,7 @@
 .picture {
   inline-size: 100%;
   min-block-size: 100%;
+  object-fit: cover;
 }
 
 
@@ -271,17 +262,9 @@
 
 @media (1024px > width >=768px) {
 
-  .page {
-    min-inline-size: 768px;
-  }
-
   .header {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: (1fr min-content 1fr);
     min-height: 1024px;
     padding: 20px 20px 0 20px;
-    block-size: 100vh;
   }
 
   .header__title {
@@ -292,7 +275,6 @@
 
   .header__content {
     justify-items: end;
-    margin-bottom: 33px;
   }
 
   .decorated-zone::after {
@@ -311,7 +293,8 @@
     padding-right: 9px;
   }
 
-  .title-decor {
+  .header .title-decor {
+    margin-block-end: 30px;
     inline-size: 50%;
   }
 
@@ -336,22 +319,18 @@
     margin-block-end: 80px;
   }
 
-  .cards__block_columns {
+  .cards__block.causes {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .cards__block_columns .content__card:first-of-type {
-    margin-block-start: 20px;
-  }
-
-  .cards__block_columns .content__card:last-child {
-    margin-block-end: 60px;
+  .cards__block.causes .content__card:last-child {
+    margin-block-end: 80px;
   }
 
   .cards__title {
-    max-inline-size: 230px;
     margin-block-end: 0;
+    max-inline-size: 230px;
   }
 
   .content__card:not(:last-child) {
@@ -360,6 +339,10 @@
 
   .card__text {
     margin-block-end: 20px;
+  }
+
+  .cards__block.causes .card__text {
+    margin-block-end: 0;
   }
 
 
@@ -374,17 +357,10 @@
 
   .title-decor.galery {
     margin-block-end: 20px;
-    inline-size: 100%;
   }
 
   .galery__picture {
-    display: grid;
     gap: 20px;
-  }
-
-  .picture {
-    margin: 0;
-    object-fit: cover;
   }
 
   .picture:not(:last-child) {
@@ -415,7 +391,6 @@
   .footer__block {
     min-height: 1024px;
     padding: 20px 20px 20px 20px;
-    block-size: 100vh;
   }
 
   .footer__title {
@@ -431,22 +406,14 @@
 
 @media (width >=1024px) {
 
-  .page {
-    min-inline-size: 1024px;
-  }
-
   .header {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     min-height: 768px;
     padding: 20px 20px 0 20px;
-    block-size: 100vh;
   }
 
   .header__theme-menu {
     justify-content: center;
-    margin-bottom: 223px;
+    align-items: start;
   }
 
   .header__theme-menu-list {
@@ -461,12 +428,11 @@
   }
 
   .header__content {
-    display: grid;
     justify-items: end;
-    margin-bottom: 90px;
   }
 
-  .title-decor {
+  .header .title-decor {
+    margin-block-end: 35px;
     inline-size: 50%;
   }
 
@@ -511,25 +477,24 @@
     margin-block-end: 80px;
   }
 
-  .cards__block_columns {
+  .cards__block.causes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .cards__block_columns>.cards__title {
+  .cards__block.causes>.cards__title {
     grid-column: 1 / -1;
     max-width: 300px;
   }
 
-  .cards__block_columns .content__card {
+  .cards__block.causes .content__card {
     margin-block-end: 0;
   }
 
-  .cards__block_columns .content__card:last-child {
+  .cards__block.causes .content__card:last-child {
     margin-block-end: 80px;
   }
-
 
 
 
@@ -543,18 +508,10 @@
 
   .title-decor.galery {
     margin-block-end: 20px;
-    inline-size: 100%;
   }
 
   .galery__picture {
-    display: grid;
     gap: 20px;
-  }
-
-  .picture {
-    margin: 0;
-    object-fit: cover;
-    inline-size: 100%;
   }
 
   .picture:not(:last-child) {
@@ -585,10 +542,41 @@
   .footer__block {
     min-height: 768px;
     padding: 20px 20px 20px 20px;
-    block-size: 100vh;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+
+
+@media (prefers-color-scheme: light) {
+
+  @media (min-width: 1024px) {
+    .header__title {
+      text-shadow: 4px 4px 0 #FF0070;
+    }
+
+    .footer__title {
+      text-shadow: 2px 2px 0 #FF0070;
+    }
+  } 
+
+  :root {
+    --bg-color: #FFF1F7;
+    --text-color: #353430;
+    --accent-color: #FF8DCB;
+    --title-color: #353430;
+    --button-color: #353430;
+    --decor-color: #353430;
+    --hover-color: rgba(53, 52, 48, 40%);
+    --focus-color: #FFC2E6;
+    --cards-title: #353430;
+    --accent: #FF8DCB;
+    --element-display: none;
+    --main-font: 'IBM Plex Mono', monospace;
+    --font-size:  1.125rem;
+    --image: url('../images/cover-image-light.png');
   }
 }

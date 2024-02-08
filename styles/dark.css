@@ -2,47 +2,15 @@
   --bg-color:#000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
+  --title-color: #000028;
+  --button-color:  #FF0070;
+  --decor-color: #FF0070;
+  --hover-color: rgba(255, 0, 112, 40%); 
+  --cards-title: #FF0070;
   --focus-color: #DB00FF;
+  --accent: #FF0070;
+  --element-display: flex;
   --main-font: 'IBM Plex Mono', monospace;
   --font-size: 1.125rem;
   --image: url('../images/cover-image-dark.png');
-
-  .title-decor {
-    color: var(--bg-color);
-  }
-
-  .header__theme-menu-button {
-    color: var(--accent-color);
-  }
-
-  .header__theme-menu-button_active {
-    outline: 1px solid var(--accent-color);
-  }
-
-  .header__theme-menu-button:hover {
-    border: 1px solid rgba(255, 0, 112, 40%);
-  }
-
-  .header__theme-menu-button:focus {
-    border-block-end: 1px solid var(--accent-color);
-  }
-
-  .decorated-zone::before {
-    border-inline-start: 1px solid var(--accent-color);
-    border-block-end: 1px solid var(--accent-color);
-  }
-
-  .decorated-zone::after {
-    border-inline-end: 1px solid var(--accent-color);
-    border-block-start: 1px solid var(--accent-color);
-  }
-
-  .cards__title {
-    color: var(--accent-color);
-  }
-  
-  .accent {
-    text-shadow: 1px 1px 0px var(--accent-color);
-  }
 }
-
