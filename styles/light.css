@@ -14,3 +14,33 @@
   --font-size:  1.125rem;
   --image: url('../images/cover-image-light.png');
 }
+
+@media (prefers-color-scheme: light) {
+
+  @media (min-width: 1024px) {
+    .header__title {
+      text-shadow: 4px 4px 0 #FF0070;
+    }
+
+    .footer__title {
+      text-shadow: 2px 2px 0 #FF0070;
+    }
+  } 
+
+  :root {
+    --bg-color: #FFF1F7;
+    --text-color: #353430;
+    --accent-color: #FF8DCB;
+    --title-color: #353430;
+    --button-color: #353430;
+    --decor-color: #353430;
+    --hover-color: rgba(53, 52, 48, 40%);
+    --focus-color: #FFC2E6;
+    --cards-title: #353430;
+    --accent: #FF8DCB;
+    --element-display: none;
+    --main-font: 'IBM Plex Mono', monospace;
+    --font-size:  1.125rem;
+    --image: url('../images/cover-image-light.png');
+  }
+}
